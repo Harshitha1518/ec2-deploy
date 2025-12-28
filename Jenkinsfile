@@ -21,10 +21,10 @@ pipeline {
 
         stage('Deploy') {
     steps {
-        sh '''
-            scp target/myapp.war ubuntu@13.126.223.241:/home/ubuntu/app/
+        sh ''' 
+        scp target/hello.war ubuntu@13.126.223.241:/home/ubuntu/app/
 
-            ssh ubuntu@13.126.223.241 "nohup java -jar /home/ubuntu/app/myapp.war \
+            ssh ubuntu@13.126.223.241 "nohup java -jar /home/ubuntu/app/hello.war \
                 > /home/ubuntu/app &"
         '''
     }
