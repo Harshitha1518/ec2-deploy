@@ -21,7 +21,7 @@ pipeline {
 
         stage('Deploy') {
     steps {
-        sshagent(['ubuntu']) {
+        sshagent(['Ubuntu']) {
         sh ''' 
         scp target/hello.war ubuntu@13.126.223.241:/home/ubuntu/app/
 
