@@ -9,7 +9,7 @@ pipeline {
 
         stage('Checkout') {
             steps {
-                git branch: 'master', url: 'https://github.com/Harshitha1518/ec2-deploy.git'
+                git branch: 'main', url: 'https://github.com/Harshitha1518/ec2-deploy.git'
             }
         }
 
