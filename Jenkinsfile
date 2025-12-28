@@ -23,7 +23,7 @@ pipeline {
             steps {
             sh '''
             mkdir -p /home/ubuntu/app
-            cp target/myapp.war \ ubuntu@13.126.223.241:/home/ubuntu/app/
+            cp target/myapp.war ubuntu@13.126.223.241:/home/ubuntu/app/
             '''
                 }
             }
