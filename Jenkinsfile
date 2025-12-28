@@ -1,12 +1,15 @@
 pipeline {
     agent any
 
+    tools {
+        maven 'maven3'
+    }
+
     stages {
 
         stage('Checkout') {
             steps {
-                git branch: 'master',
-                    url: 'https://github.com/Harshitha1518/hello-world-war-java.git'
+                git branch: 'master', url: 'https://github.com/Harshitha1518/ec2-deploy.git'
             }
         }
 
@@ -18,9 +21,13 @@ pipeline {
 
         stage('Deploy') {
             steps {
-               
+            sh '''
+            mkdir -p /home/ubuntu/app
+            cp target/myapp.war \ ubuntu@13.126.223.241:/home/ubuntu/app/
+            '''
                 }
             }
         }
     }
 }
+
